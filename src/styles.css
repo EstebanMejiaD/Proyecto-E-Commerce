@@ -1,0 +1,164 @@
+*{
+    box-sizing: border-box;
+    background: #fff;
+    font-family: 'Inconsolata', monospace;
+}
+.flex-container {
+    display: flex;
+    height: 177px;
+    justify-content: space-evenly;
+}
+.flex-item {
+    width: 120px;
+}
+/* contact-menu*/
+.contact-menu {
+    min-width: 200px;
+    justify-content: center;
+    padding-left: 5px;
+}
+
+.contact-menu p{
+    font-size: 20px;
+}
+.contact-menu h4 {
+    font-size: 20px;
+}
+/* principal-menu*/
+.principal-menu {
+    min-width: 577px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.flexPrincipalChild {
+    align-content: flex-start;
+    min-width: 500px;
+    margin: auto;
+}
+
+
+.h1-menu {
+    color: #454546;
+    font-size: 64px;
+    font-style: initial;
+    font-weight: bolder;
+    width: 100%;
+    margin-top: 0 ;
+    margin-bottom: 5px ;
+    border-bottom: 1px solid #ccc;
+    letter-spacing: 5px;
+}
+.navbar-ul {
+background: none;
+display: flex;
+position: static;
+width: 100%;
+justify-content: space-evenly;
+}
+.navbar-li {
+    display: block;
+    position: relative;
+    padding: 20px;
+}
+.navbar-li:hover  {
+    background: #454546;
+    color: #fff;
+}
+.navbar-li:hover a {
+    background: #454546;
+    color: #fff;
+}
+
+.principal-menu a {
+    text-decoration: none;
+    color: #333;
+    
+}
+
+
+/* right-menu*/
+.right-menu {
+    min-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.user-cart-container {
+    display: flex;
+    justify-items: center;
+    margin-bottom: 0;
+}
+
+.user-icon {
+    margin: 10px 20px;
+}
+.button-cart {
+    min-width: 130px !important;
+    height: 37px !important;
+    display: block;
+    color: #454546;
+    border: 1px solid #454546;
+    text-decoration: none;
+    resize: both;
+    
+}
+.button-cart:hover {
+    color: #fff;
+    background: #454546;
+    border-radius: 5px;
+}
+.button-cart:hover  i {
+    color: #fff;
+    background: #454546;
+}
+
+#form-search {
+margin-top: 0;
+    
+}
+
+#form-search input{
+    min-width: 150px;
+    height: 40px;
+    
+    border: none;
+    border-bottom: 3px solid #333;
+    background: transparent;
+    color: #fff;
+}
+#form-search input:focus {
+    background: linear-gradient(to bottom, transparent, #818181);
+    outline: none;
+    border-bottom: 3px solid #333;
+}
+
+
+/*
+  Slide banner section
+*/
+
+.section-slide {
+    height: 600px;
+    margin-top: 100px;
+}
+.color-fonts {
+    color: #000;
+}
+.buttom-slide {
+    min-width: 130px !important;
+    height: 37px !important;
+    color: #454546;
+    border: 1px solid #454546;
+    text-decoration: none;
+    resize: both;
+    transition: all .8s;
+}
+.buttom-slide:hover {
+    color: #fff;
+    background: #454546;
+    border-radius: 5px;
+}
