@@ -1,5 +1,5 @@
 
-
+alert(`Nota: ¡Leer primero el REDME.md!  Éste es un proyecto de desarrollo web: E-commerce, que tiene implementaciones de HTML, CSS, JavaScript y Boostrap 5`);
 const userIcon = document.querySelector(`.user-icon-container`);
 const asideLogin = document.querySelector(`.aside-login-e`);
 const btnCart =  document.querySelector(`.button-cart`);

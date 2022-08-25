@@ -4,6 +4,16 @@
   
     font-family: 'Inconsolata', monospace;
 }
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --very-light-pink: #C7C7C7;
+    --text-input-field: #F7F7F7;
+    --hospital-green: #ACD9B2;
+    --sm: 14px;
+    --md: 16px;
+    --lg: 18px;
+  }
 .inactive {
     display: none !important;
 }
@@ -19,6 +29,12 @@
     left: 97%;
     top: 35%;
     color: #000;
+}
+.span-close-alert {
+    position: absolute;
+    left: 93%;
+    top: 30%;
+    color: #818181;
 }
 /*Estilos del menu nav*/
 .flex-container {
@@ -351,7 +367,7 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
   }
   .product-info div p:nth-child(1) {
     font-weight: bold;
-    font-size: var(--md);
+    font-size: var(--lg);
     margin-top: 0;
     margin-bottom: 4px;
   }
@@ -359,8 +375,108 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
     font-size: var(--sm);
     margin-top: 0;
     margin-bottom: 0;
-    color: var(--very-light-pink);
+    color: #000;
   }
+
+
+/* section of card info */
+  .about {
+    padding: 82px 0;
+}
+
+.section__title {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.section__title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    text-transform: capitalize;
+    margin-top: 20px;
+}
+.about .member {
+    padding: 30px;
+    border-radius: 5px;
+    transition: all .5s;
+}
+
+.about .member:hover {
+    box-shadow: 0 15px 30px rgb(77 87 222 / 30% );
+}
+
+.about .member h4 {
+    font-weight: 700;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.about .member .pic {
+    overflow: hidden;
+    width: 180px;
+    border-radius: 50%;
+}
+
+.about .member span{
+    display: block;
+    font-size: 17px;
+    padding-bottom: 10px;
+    font-weight: 500;
+    color: #ccc;
+}
+
+.about .member p{
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.about .member a{
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid;
+    color: rgb(65, 65, 172);
+}
+
+.about .member a:hover {
+    background-color: rgb(66, 66, 170);
+    color: #aaa;
+}
+.buttom-cardInfo {
+    background: transparent;
+    min-width: 130px !important;
+    height: 37px !important;
+    color: #000;
+    border: 2px solid #08c6ab;
+    text-decoration: none;
+    resize: both;
+    transition: all .8s;
+  }
+  .buttom-cardInfo:hover {
+    color: #000;
+    background: #08c6ab;
+    border-radius: 5px;
+  }
+
+
+.footer-container {
+    margin-top: 30px;
+    background: #000;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+  
+
+
   @media (max-width: 640px) {
     .cards-container {
       grid-template-columns: repeat(auto-fill, 140px);
@@ -373,3 +489,7 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
       height: 140px;
     }
   }
+
+
+
+  
