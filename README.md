@@ -39,8 +39,3 @@ Y realizar claramente un footer donde se muestren diversos links, el Abaut US. L
 4.3 Una API de Google maps donde se muestre la locación fisica de la empresa.   
 4.5 Footer y NavBar. 
 
-Ejemplo para realizar la actividad 2: E-commerce.
-
-Link of Demo: https://ecommerce-tech.netlify.app/
-
-Link del repositorio en GitHub: https://github.com/luismavlo/eccomerce-tech
