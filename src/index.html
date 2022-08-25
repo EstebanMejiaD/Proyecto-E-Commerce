@@ -23,6 +23,12 @@
     <title> I X O N</title>
 </head>
 <body>
+  <div class="alert alert-primary" role="alert">
+    Dale click al Icono<i class="user-icon fas fa-user"></i>para ingresar a tu cuenta.
+    <div class="close-img-container">
+      <img class="img-close-alert" src="components/icons/icon_close.png">
+    </div>  
+  </div>
     <header class="flex-container">
         <div class="flex-item contact-menu">
             <h4>
@@ -41,7 +47,7 @@
         </div>
         <div class="flex-item right-menu">
             <div class="user-cart-container">
-                <span>
+                <span class="user-icon-container">
                     <i class="user-icon fas fa-user"></i>
                 </span>
                 <button class="button-cart">My cart <i class="fas fa-shopping-cart"></i></button>
@@ -52,6 +58,37 @@
             </form>
         </div>
     </header>
+    <!-- <style>
+      .inactive {
+        display: none;
+      }
+    </style> -->
+    <!-- aside login estructure -->
+    <aside class="aside-login-e inactive">
+      <div class=" login-container">
+          <div class="login-close">
+              <img src="components/icons/icon_close.png">
+          </div>
+              <h2>Ingresa a tu cuenta</h2>
+              <div class="form-container">
+                  <form>
+                      <div class="input-container">
+                          <label for="email">Ingrese su email</label>
+                          <input type="email" name="email" autocomplete="off" value="" placeholder="Email...">
+                          <small>Nosotros nunca le compartiremos su informacion a nadie.</small>
+                      </div>
+                      <div class="input-container">
+                          <label for="password" autocomplete="off">Contraseña</label>
+                          <input type="password" name="password" autocomplete="off" value="" placeholder="·······">
+                      </div>
+                      <div class="button-group">
+                          <input type="submit" class="btn-login" value="Ingresar">
+                          <input type="button" class="btn-transparent" value="Regístrate">
+                      </div>
+                  </form>
+                </div>
+        </div>
+    </aside>
     <section class="section-slide">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -100,7 +137,7 @@
 
 
 
-
+    <script src="main.js"></script>
      <!-- script for icons -->
     <script 
     src="https://kit.fontawesome.com/62ea397d3a.js" 
