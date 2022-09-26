@@ -26,13 +26,17 @@ function closeAlertLogin() {
 
 
 
-
+// lista de cuentas registradas
 let Cuentas = [
     {
+    nombre: "Victor",
+    apellido: "De La Hoz",
     correo: "esteban@gmail.com",
     contraseña: "esteban12345"
     },
     {
+    nombre: "Esteban",
+    apellido: "mejia",
     correo: "victor@gmail.com",
     contraseña: "victor12345"
     },
