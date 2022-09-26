@@ -23,3 +23,18 @@ function closeAlideLogin() {
 function closeAlertLogin() {
     alertLogin.classList.add(`inactive`);
 }
+
+
+
+
+let Cuentas = [
+    {
+    correo: "esteban@gmail.com",
+    contraseña: "esteban12345"
+    },
+    {
+    correo: "victor@gmail.com",
+    contraseña: "victor12345"
+    },
+];
+
