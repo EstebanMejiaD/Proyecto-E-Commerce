@@ -20,33 +20,13 @@
 }
 
 
-/* eltilos para el aletra de arriba */
-.close-img-container {
-    display: flex;
-
-}
-
-.img-close-alert{
-    position: absolute;
-    left: 97%;
-    top: 35%;
-    color: #000;
-}
-.span-close-alert {
-    position: absolute;
-    left: 93%;
-    top: 30%;
-    color: #818181;
-}
-
-
-
-
 /*Estilos del menu nav*/
+
 .flex-container {
     display: flex;
     height: 177px;
     justify-content: space-evenly;
+    margin-bottom: 80px;
 }
 .flex-item {
     width: 120px;
@@ -305,35 +285,44 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
 }
 }
 
-/*
-  Slide banner section
-*/
+/* Estilos para el titulo del apartado de SHOP  O STORE */  
 
-.section-slide {
-    height: 600px;
-    margin-top: 100px;
+
+.TituloH1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #646464;
 }
-.color-fonts{
-    color: #000;
+.TituloH1 b {
+    color: #000000;
 }
-.buttom-slide {
-    background: transparent;
-    min-width: 130px !important;
-    height: 37px !important;
-    color: #fff;
-    border: 2px solid #08c6ab;
-    text-decoration: none;
-    resize: both;
-    transition: all .8s;
+.ayuda {
+   padding-left: 100px;
 }
-.buttom-slide:hover {
-    color: #fff;
-    background: #08c6ab;
-    border-radius: 5px;
+
+.contenedor-help {
+    margin: 15px 5px;
+}
+.contenedor-help p {
+    margin: 0;
+}
+.transparent-ayuda:hover {
+    background-color: rgba(40, 176, 181, 0.1);
+}
+.contenedor-pagos p {
+    margin: 0;
 }
 
 
 /* styles of product list */
+.contenedor-lista-de-productos {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.product-card {
+    margin: 20px 20px;
+}
+
 .main-container {
     margin-top: 50px;
 }
@@ -383,119 +372,3 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
     margin-bottom: 0;
     color: #000;
   }
-
-
-/* section of card info */
-  .about {
-    padding: 82px 0;
-}
-
-.section__title {
-    text-align: center;
-    padding-bottom: 30px;
-}
-
-.section__title h2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #000;
-    text-transform: capitalize;
-    margin-top: 20px;
-}
-.about .member {
-    padding: 30px;
-    border-radius: 5px;
-    transition: all .5s;
-}
-
-.about .member:hover {
-    box-shadow: 0 15px 30px rgb(77 87 222 / 30% );
-}
-
-.about .member h4 {
-    font-weight: 700;
-    font-size: 25px;
-    text-transform: uppercase;
-    color: #000;
-    margin-bottom: 5px;
-}
-
-.about .member .pic {
-    overflow: hidden;
-    width: 180px;
-    border-radius: 50%;
-}
-
-.about .member span{
-    display: block;
-    font-size: 17px;
-    padding-bottom: 10px;
-    font-weight: 500;
-    color: #ccc;
-}
-
-.about .member p{
-    margin: 10px 0 0 0;
-    font-size: 14px;
-    color: #aaa;
-}
-
-.about .member a{
-    transition: ease-in-out 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    width: 38px;
-    height: 38px;
-    border: 1px solid;
-    color: rgb(65, 65, 172);
-}
-
-.about .member a:hover {
-    background-color: rgb(66, 66, 170);
-    color: #aaa;
-}
-.buttom-cardInfo {
-    background: transparent;
-    min-width: 130px !important;
-    height: 37px !important;
-    color: #000;
-    border: 2px solid #08c6ab;
-    text-decoration: none;
-    resize: both;
-    transition: all .8s;
-  }
-  .buttom-cardInfo:hover {
-    color: #000;
-    background: #08c6ab;
-    border-radius: 5px;
-  }
-
-
-.footer-container {
-    margin-top: 30px;
-    background: #000;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-  
-
-
-  @media (max-width: 640px) {
-    .cards-container {
-      grid-template-columns: repeat(auto-fill, 140px);
-    }
-    .product-card {
-      width: 140px;
-    }
-    .product-card img {
-      width: 140px;
-      height: 140px;
-    }
-  }
-
-
-
-  

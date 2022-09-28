@@ -18,6 +18,8 @@
     rel="stylesheet" 
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
     crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="src/components/icons/INOX.ico">
     <title> I X O N - S T O R E</title>
@@ -26,24 +28,26 @@
   <div class="alert alert-secondary" role="alert">
     Dale click al Icono<i class="user-icon fas fa-user"></i>para ingresar a tu cuenta.
     <div class="close-img-container">
-      <span class="span-close-alert">CLOSE</span>
+      <span class="span-close-alert">CERRAR</span>
       <img class="img-close-alert" src="src/components/icons/icon_close.png">
     </div>  
   </div>
+
+  <!-- Estructura del NavBar del aplicativo -->
     <header class="flex-container">
         <div class="flex-item contact-menu">
             <h4>
-                Need Help
+                Necesitas ayuda
             </h4>
-            <p><i class="fas fa-phone"></i> Call 123456789</p>
+            <p><i class="fas fa-phone"></i> LLAMA:3043112837</p>
         </div>
         <div class="flex-item principal-menu">
             <h1 class="flexPrincipalChild h1-menu"> I X O N</h1>
             <ul class="navbar-ul flexPrincipalChild">
-                <li class="navbar-li"><a href="#">HOME</a></li>
-                <li class="navbar-li"><a href="#">ABOUT</a></li>
-                <li class="navbar-li"><a href="#">SHOP</a></li>
-                <li class="navbar-li"><a href="#">CONTACT</a></li>
+                <li class="navbar-li"><a href="#">INICIO</a></li>
+                <li class="navbar-li"><a href="#">NOSOTROS</a></li>
+                <li class="navbar-li"><a href="src/SHOP.html">TIENDA</a></li>
+                <li class="navbar-li"><a href="#">CONTACTANOS</a></li>
             </ul>
         </div>
         <div class="flex-item right-menu">
@@ -51,7 +55,7 @@
                 <span class="user-icon-container">
                     <i class="user-icon fas fa-user"></i>
                 </span>
-                <button class="button-cart">My cart <i class="fas fa-shopping-cart"></i></button>
+                <button class="button-cart">Carrito <i class="fas fa-shopping-cart"></i></button>
             </div>
             <form id="form-search">
                     <input type="search" placeholder="Buscar producto">
@@ -59,11 +63,8 @@
             </form>
         </div>
     </header>
-    <!-- <style>
-      .inactive {
-        display: none;
-      }
-    </style> -->
+    
+
     <!-- aside login estructure -->
     <aside class="aside-login-e inactive">
       <div class=" login-container">
@@ -90,6 +91,8 @@
                 </div>
         </div>
     </aside>
+
+    <!-- Seccion para el carrusel de imagenes de la pagina principal-->
     <section class="section-slide">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -105,7 +108,7 @@
                 <div class="carousel-caption d-none d-md-block">
                   <h5 class="color-fonts">Iphone 11</h5>
                   <p class="color-fonts">Es uno de los móviles mas potentes del mercado...</p>
-                  <button class="buttom-slide">SHOP NOW</button>
+                  <button class="buttom-slide">COMPRAR</button>
                 </div>
               </div>
               <div class="carousel-item">
@@ -113,7 +116,7 @@
                 <div class="carousel-caption d-none d-md-block">
                   <h5 class="color-fonts">MacBoock Pro 13"</h5>
                   <p>Más potencia, mejor estilo y mayor comodidad...</p>
-                  <button class="buttom-slide">SHOP NOW</button>
+                  <button class="buttom-slide">COMPRAR</button>
                 </div>
               </div>
               <div class="carousel-item">
@@ -121,7 +124,7 @@
                 <div class="carousel-caption d-none d-md-block">
                   <h5 class="color-fonts">Televisor Smart Sony-C45H 50"</h5>
                   <p class="color-fonts">Con mejor definicón que la que tenía Ronaldo...</p>
-                  <button class="buttom-slide">SHOP NOW</button>
+                  <button class="buttom-slide">COMPRAR</button>
                 </div>
               </div>
             </div>
@@ -169,7 +172,7 @@
             </figure>
           </div>
         </div>
-  
+
         <div class="product-card">
           <img src="src/components/image/macBookprom2.png" alt="">
           <div class="product-info">
@@ -222,11 +225,11 @@
                   <div class="d-flex member">
                       <div class="pic"><img src="src/components/image/FastRelog.png" class="img-fluid" alt=""></div>
                       <div class="ps-4">
-                          <h4>Fast Shipping</h4>
+                          <h4>Envío rápido</h4>
                           <span></span>
                           <P>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</P>
                           <div class="d-flex mt-3">
-                            <button class="buttom-cardInfo">SHOP NOW</button>
+                            <button class="buttom-cardInfo">COMPRAR</button>
                           </div>
                       </div>
                   </div>
@@ -235,11 +238,11 @@
                   <div class="d-flex member">
                       <div class="pic"><img src="src/components/image/escudo.jpg" class="img-fluid" alt=""></div>
                       <div class="ps-4">
-                          <h4>UV Protection</h4>
+                          <h4>Protección UV</h4>
                           <span></span>
                           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
                           <div class="container-btn-card-info d-flex mt-3">
-                            <button class="buttom-cardInfo">SHOP NOW</button>
+                            <button class="buttom-cardInfo">COMPRAR</button>
                           </div>
                       </div>
                   </div>
@@ -275,6 +278,8 @@
         </div>
       </div>
   </footer>
+
+
 
 
 
