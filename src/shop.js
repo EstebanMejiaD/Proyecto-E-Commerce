@@ -85,17 +85,19 @@ let listarProductos = () => {
 
     return    `   
     <div class="product-card">
-          <img src="${imagen}" alt="iphone 13">
-          <div class="product-info">
-            <div>
-              <p>$${precio}</p>
-              <p>${nombre}</p>
+            <div class="nombreproduct">
+                <h3>${nombre}</h3>
             </div>
-            <figure>
-              <img src="components/icons/bt_add_to_cart.svg" alt="">
-            </figure>
-          </div>
-    </div>
+            <img src="${imagen}" alt="iphone 13">
+            <div class="product-info">
+              <div>
+                <p>$${precio}</p>
+              </div>
+              <figure>
+                <i class="bi bi-cart-check"></i>
+              </figure>
+            </div>
+        </div>
     
     `; 
     }).join(""));
