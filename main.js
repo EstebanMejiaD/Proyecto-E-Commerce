@@ -1,5 +1,5 @@
 
-alert(`Nota: ¡Leer primero el REDME.md!  Éste es un proyecto de desarrollo web: E-commerce, que tiene implementaciones de HTML, CSS, JavaScript y Boostrap 5`);
+// alert(`Nota: ¡Leer primero el REDME.md!  Éste es un proyecto de desarrollo web: E-commerce, que tiene implementaciones de HTML, CSS, JavaScript y Boostrap 5`);
 const userIcon = document.querySelector(`.user-icon-container`);
 const asideLogin = document.querySelector(`.aside-login-e`);
 const btnCart =  document.querySelector(`.button-cart`);
@@ -25,20 +25,8 @@ function closeAlertLogin() {
 }
 
 
+//evento para el menu si iniciar seccion
+const tiendaSinSesion = document.querySelector("#tiendaSinSesion").addEventListener("click", ()=>  alert("Debes iniciar sesion primero para ver la lista de productos exclusivos"));
+const ProductoSinSeccion = document.querySelector("#ProductoSinSeccion").addEventListener("click", ()=>  alert("Debes iniciar sesion primero para ver Este producto"));
 
-// lista de cuentas registradas
-let Cuentas = [
-    {
-    nombre: "Victor",
-    apellido: "De La Hoz",
-    correo: "esteban@gmail.com",
-    contraseña: "esteban12345"
-    },
-    {
-    nombre: "Esteban",
-    apellido: "mejia",
-    correo: "victor@gmail.com",
-    contraseña: "victor12345"
-    },
-];
 

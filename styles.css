@@ -521,4 +521,19 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
 
 
 
+  /* estilos para mensaje de bienvenida*/
   
+  .TituloH1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #646464;
+    text-align: center;
+}
+.TituloH1 b {
+    color: #000000;
+}
+
+/*   mensaje por validacion de inicio de sesion*/
+.alert-sesionFalse {
+    color: #ff0000;
+}

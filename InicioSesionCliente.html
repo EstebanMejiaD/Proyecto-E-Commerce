@@ -25,7 +25,13 @@
     <title> I X O N - S T O R E</title>
 </head>
 <body>
-  
+  <div class="alert alert-secondary" role="alert">
+    Dale click al Icono<i class="user-icon fas fa-user"></i>para ingresar a tu cuenta.
+    <div class="close-img-container">
+      <span class="span-close-alert">CERRAR</span>
+      <img class="img-close-alert" src="src/components/icons/icon_close.png">
+    </div>  
+  </div>
 
   <!-- Estructura del NavBar del aplicativo -->
     <header class="flex-container">
@@ -40,7 +46,7 @@
             <ul class="navbar-ul flexPrincipalChild">
                 <li class="navbar-li"><a href="#">INICIO</a></li>
                 <li class="navbar-li"><a href="#">NOSOTROS</a></li>
-                <li class="navbar-li"><a href="src/SHOP.html">TIENDA</a></li>
+                <li class="navbar-li" id="tiendaSinSesion"><a href="#">TIENDA</a></li>
                 <li class="navbar-li"><a href="#">CONTACTANOS</a></li>
             </ul>
         </div>
@@ -60,7 +66,7 @@
     
 
     <!-- aside login estructure -->
-    <!-- <aside class="aside-login-e inactive">
+    <aside class="aside-login-e inactive">
       <div class=" login-container">
           <div class="login-close">
               <img src="src/components/icons/icon_close.png">
@@ -79,21 +85,19 @@
                       </div>
                       <div class="button-group">
                           <input type="button" class="btn-login" value="Ingresar" id="login">
-                          <input type="button" class="btn-transparent" value="Regístrate">
+                          <input type="button" class="btn-transparent" value="Regístrate" id="registrarse">
                       </div>
                   </form>
-                </div>
+              </div>
+              <div class="alert-sesionFalse" id="alertSesionFalse">
+                <!-- aquí va un mensaje de error por que el usuario no existe-->
+              </div>
+                
         </div>
-    </aside> -->
-    <div class="container ">
-      <div class="row">
-          <div class="col-lg-12 tituloShop">
-              <h1 class="TituloH1">Bienvenido a INOX STORE <b id="NombreUsiario-bienvenida">Esteban</b></h1>
-          </div>
-      </div>
-  </div>
+    </aside>
+
     <!-- Seccion para el carrusel de imagenes de la pagina principal-->
-    <section class="section-slide">
+    <section class="section-slide ">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -145,9 +149,9 @@
       <div class="titulo-listProduct">
         <h3>¡Lo nuevo solo para tí!</h3>
       </div>
-      <div class="cards-container">
+      <div class="cards-container" id="ProductoSinSeccion">
 
-        <div class="product-card">
+        <div class="product-card" id="tiendaSinSesion">
           <div class="nombreproduct">
               <h3>Iphone 13</h3>
           </div>
@@ -163,7 +167,7 @@
       </div>
         
 
-      <div class="product-card">
+      <div class="product-card "id="tiendaSinSesion">
         <div class="nombreproduct">
             <h3>airPods</h3>
         </div>
@@ -178,11 +182,11 @@
         </div>
     </div>
 
-    <div class="product-card">
+    <div class="product-card" id="tiendaSinSesion">
       <div class="nombreproduct">
           <h3>Apple Watch Series 8</h3>
       </div>
-      <img src="src/components/image/appleWatchS8.png" alt="iphone 13">
+      <img src="src/components/image/appleWatchS8.png" alt="iphone 13" id="ProductoSinSeccion">
       <div class="product-info">
         <div>
           <p>$400</p>
@@ -193,7 +197,7 @@
       </div>
   </div>
   
-  <div class="product-card">
+  <div class="product-card " id="tiendaSinSesion">
     <div class="nombreproduct">
         <h3>Imac 24-inch</h3>
     </div>
@@ -208,7 +212,7 @@
     </div>
 </div>
         
-<div class="product-card">
+<div class="product-card" id="tiendaSinSesion">
   <div class="nombreproduct">
       <h3>Pro Display XDR</h3>
   </div>
@@ -296,7 +300,9 @@
       <!-- Script principal -->
     <script src="main.js"></script>
     <!-- script de la verificacion del login-->
-    <script src="src/shop.js"></script>
+    <script src="src/components/Login.js"></script>
+    <!-- script para iniciar sesion-->
+    <script src="src/components/logicaInterfazInicioSesion.js"></script>
      <!-- script for icons -->
     <script 
     src="https://kit.fontawesome.com/62ea397d3a.js" 
