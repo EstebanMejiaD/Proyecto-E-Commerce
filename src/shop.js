@@ -24,7 +24,7 @@ let items = [
     {
         id: "ABC1",
         nombre: "Iphone 13",
-        precio: 3000,
+        precio: 1000,
         imagen: "components/image/iphone13promax.png",
     },
     {
@@ -36,7 +36,7 @@ let items = [
     {
         id: "ABC3",
         nombre: "AirPods pro",
-        precio: 400,
+        precio: 250,
         imagen: "components/image/airPods.png",
     },
     {
