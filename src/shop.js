@@ -25,7 +25,7 @@ let items = [
         id: "ABC1",
         nombre: "Iphone 13",
         precio: 3000,
-        imagen: "components/image/iphone13promax.jpg",
+        imagen: "components/image/iphone13promax.png",
     },
     {
         id: "ABC2",
@@ -37,7 +37,7 @@ let items = [
         id: "ABC3",
         nombre: "AirPods pro",
         precio: 400,
-        imagen: "components/image/airPods.jpg",
+        imagen: "components/image/airPods.png",
     },
     {
         id: "ABC4",
@@ -55,7 +55,7 @@ let items = [
         id: "ABC6",
         nombre: "Pro Display XDR",
         precio: 5000,
-        imagen: "components/image/proxDisplay.jpg",
+        imagen: "components/image/proxDisplay.png",
     },
     {
         id: "ABC7",
@@ -67,7 +67,7 @@ let items = [
         id: "ABC8",
         nombre: "Apple Watch Series 8",
         precio: 400,
-        imagen: "components/image/appleWatchS8.jpg",
+        imagen: "components/image/appleWatchS8.png",
     },
     
     
