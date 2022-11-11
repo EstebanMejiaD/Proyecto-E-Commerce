@@ -1,0 +1,37 @@
+{
+  "name": "banca-movil-web-inox",
+  "version": "1.0.0",
+  "description": "Proyecto de ingeniería de software 2: Banca Móvil inicialmente para la web.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EstebanMejiaD/banca-movil-web-INOX.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EstebanMejiaD/banca-movil-web-INOX/issues"
+  },
+  "homepage": "https://github.com/EstebanMejiaD/banca-movil-web-INOX#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.6",
+    "express-mysql-session": "^2.1.8",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "timeago.js": "^4.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
