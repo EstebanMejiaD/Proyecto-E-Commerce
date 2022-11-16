@@ -260,6 +260,15 @@ margin-top: 0;
     justify-content: space-between;
 
 }
+.button-group  a{
+    text-decoration: none !important;
+    text-align: center;
+}
+.button-group a:hover {
+    color: #08c6ab;
+    
+}
+
 .btn-login {
     border: none;
     border-radius: 5px;
@@ -540,4 +549,16 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
 /*   mensaje por validacion de inicio de sesion*/
 .alert-sesionFalse {
     color: #ff0000;
+}
+
+
+
+/* estylos del logout icon  */
+.logout-container {
+    margin-left: 20px;
+    margin-top: 7px;
+}
+.logout-container a {
+    text-decoration: none;
+    color: #000;
 }
