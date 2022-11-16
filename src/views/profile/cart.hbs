@@ -1,0 +1,89 @@
+<link rel="stylesheet" type="text/css" href="/css/stylesSHOP.css" />
+
+<!-- Estructura del NavBar del aplicativo -->
+<header class="flex-container">
+  <div class="flex-item contact-menu">
+    <h4>
+      Necesitas ayuda
+    </h4>
+    <p><i class="fas fa-phone"></i> LLAMA:3043112837</p>
+  </div>
+  <div class="flex-item principal-menu">
+    <h1 class="flexPrincipalChild h1-menu"> I X O N</h1>
+    <ul class="navbar-ul flexPrincipalChild">
+      <li class="navbar-li"><a href="/profile">INICIO</a></li>
+      <li class="navbar-li"><a href="#">NOSOTROS</a></li>
+      <li class="navbar-li"><a href="/shop">TIENDA</a></li>
+      <li class="navbar-li"><a href="#">CONTACTANOS</a></li>
+    </ul>
+  </div>
+  <div class="flex-item right-menu">
+    <div class="user-cart-container">
+      <span class="user-icon-container">
+        <i class="user-icon fas fa-user"></i>
+      </span>
+      <a class="link__button-cart" href="/cart"><button class="button-cart">Carrito
+          <i class="fas fa-shopping-cart"></i></button></a>
+    </div>
+    <form id="form-search">
+      <input type="search" placeholder="Buscar producto" />
+      <i class="fas fa-search"></i>
+    </form>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 tituloShop">
+      <h1 class="TituloH1">
+        <b>Carrito de compras.</b>
+        Selecciona la cantidad de productos que deseas comprar de manera mas
+        comoda.</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container contenedor-lista-de-productos">
+
+  <div class="row" id="productos">
+    <!-- Aqui va contenida la lista de los productos de manera dinamica-->
+    {{#each cartProduct}}
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              src="/image/{{imagen}}"
+              class="img-fluid rounded-start"
+              alt="{{ProductSlug}}"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">{{ProductName}}</h5>
+              <h5>Precio und: {{ProductPrice}}</h5>
+              <!-- aqui va la multiplicacion del numero de productos y el precio-->
+              <p class="card-text"></p>
+                Precio total: {{ProductPrice}}
+              <a
+                href="/cart/delete/{{ProductID}}"
+                style="cursor:pointer"
+                class="btn btn-danger"
+              > Eliminar del carrito </a>
+
+              <i onclick="disminuir();" class="bi bi-dash-lg botones"></i>
+              <div id="${id}" class="botones">
+                <!-- numero de productos que se estan comprano -->
+                {{! ${item}  }}
+              </div>
+              <i onclick="aumentar();" class="bi bi-plus-lg botones"></i>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <!--row-->
+
+</div>
+<!-- contenedor -->

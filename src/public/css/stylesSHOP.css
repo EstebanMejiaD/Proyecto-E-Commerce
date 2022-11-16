@@ -135,6 +135,9 @@ justify-content: space-evenly;
     color: #fff;
     background: #454546;
 }
+.link__button-cart {
+    text-decoration: none;
+}
 
 #form-search {
 margin-top: 0;
@@ -292,6 +295,7 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
     font-weight: 700;
     font-size: 2.5rem;
     color: #646464;
+    text-align: left;
 }
 .TituloH1 b {
     color: #000000;
@@ -387,3 +391,18 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
     margin-top: 5px;
     margin-bottom: 0;
   }
+
+
+
+/*
+Styles for the cart shop
+*/
+
+.botones {
+    float: left;
+    margin: 5px;
+}
+
+.cart-icon-add {
+    text-decoration: none !important;
+}

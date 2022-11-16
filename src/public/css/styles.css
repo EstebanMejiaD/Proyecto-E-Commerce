@@ -156,6 +156,10 @@ justify-content: space-evenly;
     background: #454546;
 }
 
+.link__button-cart {
+    text-decoration: none;
+}
+
 #form-search {
 margin-top: 0;
     
