@@ -1,0 +1,142 @@
+<link rel="stylesheet" type="text/css" href="/css/stylesSHOP.css" />
+
+<!-- Estructura del NavBar del aplicativo -->
+<header class="flex-container">
+  <div class="flex-item contact-menu">
+    <h4>
+      Necesitas ayuda
+    </h4>
+    <p><i class="fas fa-phone"></i> LLAMA:3043112837</p>
+  </div>
+  <div class="flex-item principal-menu">
+    <h1 class="flexPrincipalChild h1-menu"> I X O N</h1>
+    <ul class="navbar-ul flexPrincipalChild">
+      <li class="navbar-li"><a href="/profile">INICIO</a></li>
+      <li class="navbar-li"><a href="#">NOSOTROS</a></li>
+      <li class="navbar-li"><a href="/shop">TIENDA</a></li>
+      <li class="navbar-li"><a href="#">CONTACTANOS</a></li>
+    </ul>
+  </div>
+  <div class="flex-item right-menu">
+    <div class="user-cart-container">
+      <span class="user-icon-container">
+        <i class="user-icon fas fa-user"></i>
+      </span>
+      <a class="link__button-cart" href="/cart"><button
+          class="button-cart"
+        >Carrito
+          <i class="fas fa-shopping-cart"></i></button></a>
+      <span class="logout-container">
+        <a href="/"><i class="bi bi-box-arrow-right"></i></a>
+      </span>
+    </div>
+    <form id="form-search">
+      <input type="search" placeholder="Buscar producto" />
+      <i class="fas fa-search"></i>
+    </form>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 tituloShop">
+      <h1 class="TituloH1">
+        <b>Proceso de compra.</b>
+      </h1>
+    </div>
+  </div>
+</div>
+
+
+  {{#each domicilio}}
+  <div class="container contenedor-domicilio">
+
+  
+    <div class="row">
+
+      <h3 class="titulo-direccion"><i class="bi bi-geo-alt-fill"></i>
+        Direccion de entrega</h3>
+
+      <div class="col-md-3 rows-md3-domi">
+        <h4>{{nombreCompleto}}</h4>
+      </div>
+
+      <div class="col-md-7">
+        <p>{{direccion}}, {{ciudad}}, {{municipio}}.
+          {{detalle}}, {{telefono}}.</p>
+      </div>
+
+      <div class="col-md-2 rows-md3-domi button-editar-domi">
+        <a href="/domicilio/cambiar/{{domicilioID}}" class="btn btn-success">Cambiar</a>
+      </div>
+
+    </div>
+    </div>
+  {{else}}
+    <div class="col-md-4 mx-auto contenedor-sin-domicilio">
+      <div class="card card-body text-center" style="border: none;">
+        <p>Aun no tienes direccion de entrega.</p>
+        <a href="/domicilio/add" class="btn btn-primary">Crear Una.</a>
+      </div>
+    </div>
+
+  {{/each}}
+
+<div class="container contenedor-lista-de-productos">
+
+  <div class="row" id="productos">
+    <!-- Aqui va contenida la lista de los productos de manera dinamica-->
+    {{#each productoAComprar}}
+      <div class="col-md-12">
+        <div class="card mb-3" >
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img
+                src="/image/{{imagen}}"
+                class="img-fluid rounded-start"
+                alt="{{ProductSlug}}"
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h3 class="card-title">{{ProductName}}</h3>
+                <h5 class="prueba"> {{ProductPrice}}USD</h5>
+                <div style="color: #Ffff;" class="idproducto">{{ProductID}}</div>
+               
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div class="container container-mobible">
+    <h6>Precio de envío: {{envio}}USD</h6>
+    <h6>total del pedido {{total}}USD</h6>
+  </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="text-center">Metodo de pago.</h4>
+                <div class="row">
+                    <div class="col-md-6 text-center">
+                        <h5>Paga por Inox Bank</h5>
+                        <a href="" class="btn btn-primary">Ir a INOX BANK</a>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h5>Paga por Efecty</h5>
+                        <a href="" class="btn btn-warning">Ir a pago Efecty</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!--row-->
+
+</div>
+<!-- contenedor -->
+
+<script type="text/script" src="utils/operaciones.js"></script>

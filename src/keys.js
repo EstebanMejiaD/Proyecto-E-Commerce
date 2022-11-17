@@ -6,3 +6,4 @@ module.exports = {
         database: 'database_store'
     }
 };
+

@@ -406,3 +406,90 @@ Styles for the cart shop
 .cart-icon-add {
     text-decoration: none !important;
 }
+.eliminar-carrito {
+    padding-top: 10px;
+    font-size: 1.2m;
+    color: rgb(255, 75, 75);
+    
+}
+.eliminar-carrito:hover {
+    color: #f00;
+}
+
+.comprar-carrito {
+    margin-bottom: 10px;
+    display: block;
+    width: fit-content;
+}
+
+/* apartado de domicilio*/
+
+.contenedor-domicilio {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-top: 3px solid #f00;
+    border-radius: 5px;
+    background: rgba(255,255,255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255,255,255, 0.18);
+    padding: 5px;
+
+}
+
+.contenedor-sin-domicilio {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-top: 3px solid #f00;
+    border-radius: 5px;
+    background: rgba(255,255,255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255,255,255, 0.18);
+    padding: 5px;
+}
+.titulo-direccion {
+    margin-bottom: 10px;
+    color: rgb(221, 33, 33);
+    margin-left: 20px;
+}
+
+.rows-md3-domi {
+    text-align: center;
+    justify-items: center;
+}
+.button-editar-domi {
+    position: relative;
+    bottom: 15px;
+}
+/* formulario domicilio*/
+.encabezado-formulario {
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+
+/* Estilos de proceso de compra*/
+
+.input-count {
+    width: fit-content;
+}
+.input-count input {
+    width: 60px;
+}
+
+
+
+
+.container-mobible {
+    position: absolute;
+    left: 37%;
+    top: 97%;
+    z-index: 2;
+    
+}

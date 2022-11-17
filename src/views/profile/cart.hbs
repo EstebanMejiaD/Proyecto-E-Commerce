@@ -64,22 +64,16 @@
             <div class="card-body">
               <h5 class="card-title">{{ProductName}}</h5>
               <h5>Precio und: {{ProductPrice}}</h5>
-              <!-- aqui va la multiplicacion del numero de productos y el precio-->
-              <p class="card-text"></p>
-                Precio total: {{ProductPrice}}
+              <a
+                href="/cart/comprar/{{ProductID}}"
+                style="cursor:pointer"
+                class="btn btn-success comprar-carrito"
+              > Comprar</a>
               <a
                 href="/cart/delete/{{ProductID}}"
                 style="cursor:pointer"
-                class="btn btn-danger"
-              > Eliminar del carrito </a>
-
-              <i onclick="disminuir();" class="bi bi-dash-lg botones"></i>
-              <div id="${id}" class="botones">
-                <!-- numero de productos que se estan comprano -->
-                {{! ${item}  }}
-              </div>
-              <i onclick="aumentar();" class="bi bi-plus-lg botones"></i>
-
+                
+              ><i class="bi bi-trash3-fill eliminar-carrito" ></i></a>
             </div>
           </div>
         </div>

@@ -1,0 +1,45 @@
+<link rel="stylesheet" type="text/css" href="/css/stylesSHOP.css" />
+
+<div class="container p-4 ">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+
+            <div class="card contenedor-domicilio">
+                <div class="encabezado-formulario">
+                    <h2>Actualiza tu domicilio</h2>
+                </div>
+                <div class="card-body">
+                    <form action="/domicilio/cambiar/{{domicilio.domicilioID}}" method="post">
+                        <div class="form-group">
+                            <input type="text" name="nombreCompleto" class="form-control" placeholder="Nombre completo" 
+                            value="{{domicilio.nombreCompleto}}"
+                            autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="telefono" class="form-control" placeholder="Telefono" value="{{domicilio.telefono}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="ciudad" class="form-control" placeholder="Departamento" value="{{domicilio.ciudad}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="municipio" class="form-control" placeholder="Municipio/ciudad" value="{{domicilio.municipio}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="direccion" class="form-control" placeholder="Direccion" value="{{domicilio.direccion}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="detalle" class="form-control" placeholder="Mas detalles..." value="{{domicilio.detalle}}">
+                        </div>
+                        
+                        <div class="form-group d-grid gap-2">
+                            <button class="btn btn-success ">
+                                Actualizar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

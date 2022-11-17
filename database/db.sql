@@ -112,3 +112,31 @@ ALTER TABLE `cartshop`
   MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 DESCRIBE cartshop;
 
+--
+-- Crete table of domicilio
+--
+CREATE TABLE domicilios(
+  domicilioID INT(11) NOT NULL,
+  nombreCompleto VARCHAR(100) NOT NULL,
+  telefono VARCHAR(20) NOT NULL,
+  ciudad VARCHAR(40) NOT NULL,
+  municipio VARCHAR(40) NOT NULL,
+  direccion VARCHAR(100) NOT NULL,
+  detalle VARCHAR(200) NOT NULL,
+  user_idDomicilio INT(11),
+  CONSTRAINT fk_userID FOREIGN KEY (user_idDomicilio) REFERENCES users(id)
+);
+
+--
+-- Indexes for table `domicilio`
+--
+ALTER TABLE `domicilios`
+  ADD PRIMARY KEY (`domicilioID`),
+  ADD KEY `nombreCompleto` (`nombreCompleto`);
+
+--
+-- AUTO_INCREMENT for table `domicilio`
+--
+ALTER TABLE `domicilios`
+  MODIFY `domicilioID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+DESCRIBE domicilios;
