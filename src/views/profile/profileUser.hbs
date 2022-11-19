@@ -1,0 +1,87 @@
+<!-- Estructura del NavBar del aplicativo -->
+<header class="flex-container">
+  <div class="flex-item contact-menu">
+    <h4>
+      Necesitas ayuda
+    </h4>
+    <p><i class="fas fa-phone"></i> LLAMA:3043112837</p>
+  </div>
+  <div class="flex-item principal-menu">
+    <h1 class="flexPrincipalChild h1-menu"> I X O N</h1>
+    <ul class="navbar-ul flexPrincipalChild">
+      <li class="navbar-li"><a href="/profile">INICIO</a></li>
+      <li class="navbar-li"><a href="#">NOSOTROS</a></li>
+      <li class="navbar-li"><a href="/shop">TIENDA</a></li>
+      <li class="navbar-li"><a href="#">CONTACTANOS</a></li>
+    </ul>
+  </div>
+  <div class="flex-item right-menu">
+    <div class="user-cart-container">
+      <span class="user-icon-container ">
+        <a  href="/profile/ordenes"><i class="user-icon fas fa-user"></i></a>
+      </span>
+      <a class="link__button-cart" href="/cart"><button class="button-cart">Carrito
+          <i class="fas fa-shopping-cart"></i></button></a>
+          <span class="logout-container">
+            <a href="/"><i class="bi bi-box-arrow-right"></i></a>
+          </span>
+    </div>
+    <form id="form-search" action="/filter/name/" method="post">
+      <input type="search"  placeholder="Buscar producto" name="ProductName"/>
+      <button><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+</header>
+{{#each user}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Perfil de usuario.</h1>
+            <h3>Informacion personal:</h3>
+            <h6>Nombre: {{nombre}}</h6>
+            <h6>Apellido: {{apellido}}</h6>
+            <h6>Telefono: {{telefono}}</h6>
+            <h6>Email:  {{email}}</h6>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <a href="#" class="btn btn-success">Editar informacion</a>
+    </div>
+  </div>
+</div>
+
+
+
+{{/each}}
+
+
+
+<div class="container contenedor-lista-ordenes">
+    <h3>Ordenes realizadas.</h3>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">idOrden</th>
+      <th scope="col">Nombre del producto</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Direccion</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each ordenes}}
+    <tr>
+      <th scope="row">{{ordenID}}</th>
+      <td>{{ProductName}}</td>
+      <td>{{ProductPrice}}</td>
+      <td>{{ciudad}}</td>
+      <td>{{direccion}}</td>
+      {{/each}}
+    </tr>
+  </tbody>
+</table>
+</div>

@@ -1,7 +1,52 @@
 <link rel="stylesheet" type="text/css" href="/css/stylesSHOP.css" />
 
+<!-- Barra de navegacion -->
+<nav class="navbar navbar-expand-md fixed-top navbar-movil">
+  <div class="container">
+    <a class="navbar-brand text-white fs-3 name-bank" href="/profile">I N O X</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"><i
+          class="bi bi-list iconHamb"
+        ></i></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto me-lg-8 py-3">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/profile">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Descubre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/shop">Tienda</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contactos</a>
+        </li>
+        <li class="nav-item">
+          <a href="/profile/ordenes" class="nav-link"><i class="  user-icon fas fa-user"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="link__button-cart nav-link" href="/cart"><i class=" fas fa-shopping-cart"></i></a>
+        </li>
+      </ul>
+      <!-- <a class="btn-custom ms-lg-2 btn-login" href="vistas/login.html">Iniciar sesión</a>
+          <a class="btn-custom ms-lg-2 btn-register" href="vistas/register.html">Registrarse</a> -->
+    </div>
+  </div>
+</nav>
+
 <!-- Estructura del NavBar del aplicativo -->
-<header class="flex-container">
+<header class="flex-container navbar-pc">
   <div class="flex-item contact-menu">
     <h4>
       Necesitas ayuda
@@ -17,25 +62,27 @@
       <li class="navbar-li"><a href="#">CONTACTANOS</a></li>
     </ul>
   </div>
-  <div class="flex-item right-menu">
-    <div class="user-cart-container">
-      <span class="user-icon-container">
-        <i class="user-icon fas fa-user"></i>
+  <div class="flex-item right-menu none-display">
+    <div class="user-cart-container none-display">
+      <span class="user-icon-container none-display">
+        <a href="/profile/ordenes none-display"><i class="none-display user-icon fas fa-user"></i></a>
       </span>
-      <a class="link__button-cart" href="/cart"><button class="button-cart">Carrito
-          <i class="fas fa-shopping-cart"></i></button></a>
-          <span class="logout-container">
-            <a href="/"><i class="bi bi-box-arrow-right"></i></a>
-          </span>
+      <a class="link__button-cart none-display" href="/cart"><button
+          class="button-cart none-display"
+        >Carrito
+          <i class="fas fa-shopping-cart none-display"></i></button></a>
+      <span class="logout-container none-display">
+        <a href="/"><i class="bi bi-box-arrow-right none-display"></i></a>
+      </span>
     </div>
-    <form id="form-search">
-      <input type="search" placeholder="Buscar producto" />
-      <i class="fas fa-search"></i>
+    <form id="form-search none-display">
+      <input class="none-display" type="search" placeholder="Buscar producto" />
+      <i class="fas fa-search none-display" ></i>
     </form>
   </div>
 </header>
 
-<div class="container">
+<div class="container contenedor-titulo-sesion">
   <div class="row">
     <div class="col-md-8 tituloShop">
       <h1 class="TituloH1">
@@ -69,11 +116,9 @@
                 style="cursor:pointer"
                 class="btn btn-success comprar-carrito"
               > Comprar</a>
-              <a
-                href="/cart/delete/{{ProductID}}"
-                style="cursor:pointer"
-                
-              ><i class="bi bi-trash3-fill eliminar-carrito" ></i></a>
+              <a href="/cart/delete/{{ProductID}}" style="cursor:pointer"><i
+                  class="bi bi-trash3-fill eliminar-carrito"
+                ></i></a>
             </div>
           </div>
         </div>

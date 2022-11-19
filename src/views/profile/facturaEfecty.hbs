@@ -1,0 +1,38 @@
+<link rel="stylesheet" type="text/css" href="/css/stylesSHOP.css" />
+
+<div class="container">
+  <nav class="navbar bg-light navbar-factura">
+    <div class="container-fluid">
+      <a class="navbar-brand link-profile" href="/profile">
+        INOX STORE x Efecty
+      </a>
+    </div>
+  </nav>
+</div>
+
+
+  <div class="container contenedor-factura ">
+    <div class="card mx-auto contenedor-domicilio" style="width: 20rem;" >
+    <h4 class="text-center">Factura de producto</h4>
+    <img src="/image/{{newOrden.imagen}}" class="card-img-top" alt="{{newOrden.ProductName}}" />
+    <div class="card-body">
+      <h5 class="card-title text-center">{{newOrden.ProductName}}</h5>
+
+      <p class="card-text">
+        <b class="titulo-direccion">Direccion de la orden:</b>
+        {{newOrden.direccion}},
+        {{newOrden.ciudad}},
+        {{newOrden.municipio}}.
+        {{newOrden.detalle}},
+        {{newOrden.telefono}}.
+      </p>
+      <p>Telefono: {{newOrden.telefono}}</p>
+      <p>Correo: {{newOrden.correo}}.</p>
+      <i>Referencia de factura: 1287432</i>
+      <div class="d-grid gap-2">
+        <a href="/profile/ordenes" class="btn btn-success">Lista de ordenes</a>
+      <a href="#" onclick="window.print();" class="btn btn-primary">Imprimir recibo <i class="bi bi-printer"></i></a>
+      </div>
+    </div>
+  </div>
+  </div>

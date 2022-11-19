@@ -188,11 +188,11 @@ margin-top: 0;
     width: 450px;
     z-index: 1000000;
 }
-.login-close {
-    padding: 15px 20px;
-    left: 30px;
-    position: absolute;
-    top: 20px;
+.login-closed {
+   position: relative;
+    right: 200px;
+    bottom: 25px;
+    font-size: 1.3em;
 }
 .login-container h2 {
     display: block;
@@ -492,4 +492,172 @@ Styles for the cart shop
     top: 97%;
     z-index: 2;
     
+}
+
+/* formulario de ingreso de pago a inox bank*/
+
+
+
+
+
+
+
+/* Diseño del lado derecho de inicio de sesion o formulacio*/
+
+.lado-formulario {
+    
+    height: 90vh;
+    padding: 20px;
+    align-items: center;
+    text-align: left;
+    
+}
+.head-form {
+    text-align: center;
+}
+
+.formulario-login {
+    padding: 50px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    height: 100%;
+    /* width: 90%; */
+    transition: all 0.5s;
+    box-shadow:  7px 15px 25px #006494;
+    margin-right: 0;
+}
+
+.formulario-login h3 {
+    
+    color: #003554;
+}
+.formulario-login small {
+    color: #006494;
+    
+}
+
+.linkRegister {
+    text-decoration: none;
+    color: #004f74;
+    font-size: 17px;
+}
+
+.linkRegister:hover {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #0b6189;
+    text-decoration: none;
+    color: #0b6189;
+}
+
+
+
+.correo-form {
+    margin-top: 40px;
+    margin-bottom: 10px;
+
+}
+.correo-form input {
+    width: 100%;
+    outline: none;
+    border: 1px solid #064d76;
+    border-radius: 5px;
+    color: #003554;
+    height: 45px;
+    transition: all 0.5s;
+
+
+}
+.correo-form p {
+    color: #003554;
+}
+.correo-form input::placeholder {
+    color: #006494;
+}
+.correo-form input:focus {
+    box-shadow: 0px 2px 7px #006494;
+    height: 47px;
+}
+
+.contrasena-form {
+    margin-top: 40px;
+    margin-bottom: 10px;
+
+}
+
+.contrasena-form input {
+    width: 100%;
+    outline: none;
+    border: 1px solid #064d76;
+    border-radius: 5px;
+    color: #003554;
+    height: 45px;
+    transition: all 0.5s;
+}
+.contrasena-form p {
+    color: #003554;
+}
+.contrasena-form input::placeholder {
+    color: #006494;
+}
+.contrasena-form input:focus {
+    box-shadow: 0px 2px 7px #006494;
+    height: 47px;
+}
+
+.boton-login{
+    text-align: center;
+    margin-top: 60px;
+}
+.boton-login input {
+    width: 80%;
+}
+
+.btn-register {
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    background: #006494;
+    color: #fff;
+    padding: 8px 20px;
+    transition: all 0.6s;
+    margin-right: 5px ;
+    width: 170px;
+}
+
+.btn-register:hover {
+   color: #fff;
+   background: #0380ba;
+
+}
+
+/*   mensaje por validacion de inicio de sesion*/
+.alert-sesionFalse {
+    color: #ff0000 !important;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* estylos de factura  */
+.link-profile {
+    text-decoration: none;
+    color: #000;
+}
+
+.navbar-factura {
+    height: 70px;
+    background-color: #fff;
+    border-bottom: 1px solid #888;
+}
+
+
+.titulo-direccion {
+    display: block;
+    color: #000;
+    font-size: 1.4em;
+}
+
+.contenedor-factura {
+    justify-content: center;
+    width: 90%;
 }

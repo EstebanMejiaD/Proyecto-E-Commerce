@@ -140,3 +140,31 @@ ALTER TABLE `domicilios`
 ALTER TABLE `domicilios`
   MODIFY `domicilioID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 DESCRIBE domicilios;
+
+-- creacion de la tabla orden
+CREATE TABLE orden(
+  ordenID INT(11) NOT NULL,
+  correo VARCHAR(100) NOT NULL,
+  contraseña VARCHAR(20) NOT NULL,
+  nombreCompleto VARCHAR(100) NOT NULL,
+  telefono VARCHAR(20) NOT NULL,
+  ciudad VARCHAR(40) NOT NULL,
+  municipio VARCHAR(40) NOT NULL,
+  direccion VARCHAR(100) NOT NULL,
+  detalle VARCHAR(200) NOT NULL,
+  ProductName VARCHAR(40) NOT NULL,
+  ProductPrice DECIMAL(10,2) DEFAULT 0.00,
+  imagen VARCHAR(50) NOT NULL,
+  user_idOrden INT(11),
+  CONSTRAINT fk_userIDOrden FOREIGN KEY (user_idOrden) REFERENCES users(id)
+);
+
+ALTER TABLE `orden`
+  ADD PRIMARY KEY (`ordenID`);
+
+  ALTER TABLE `orden`
+  MODIFY `ordenID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+DESCRIBE orden;
+ALTER TABLE `orden`
+  MODIFY `contraseña` VARCHAR(20);
+  

@@ -20,7 +20,7 @@
   <div class="flex-item right-menu">
     <div class="user-cart-container">
       <span class="user-icon-container">
-        <i class="user-icon fas fa-user"></i>
+        <a href="/profile/ordenes"><i class="user-icon fas fa-user"></i></a>
       </span>
       <a class="link__button-cart" href="/cart"><button
           class="button-cart"
@@ -47,11 +47,9 @@
   </div>
 </div>
 
-
-  {{#each domicilio}}
+{{#each domicilio}}
   <div class="container contenedor-domicilio">
 
-  
     <div class="row">
 
       <h3 class="titulo-direccion"><i class="bi bi-geo-alt-fill"></i>
@@ -62,25 +60,31 @@
       </div>
 
       <div class="col-md-7">
-        <p>{{direccion}}, {{ciudad}}, {{municipio}}.
-          {{detalle}}, {{telefono}}.</p>
+        <p>{{direccion}},
+          {{ciudad}},
+          {{municipio}}.
+          {{detalle}},
+          {{telefono}}.</p>
       </div>
 
       <div class="col-md-2 rows-md3-domi button-editar-domi">
-        <a href="/domicilio/cambiar/{{domicilioID}}" class="btn btn-success">Cambiar</a>
+        <a
+          href="/domicilio/cambiar/{{domicilioID}}"
+          class="btn btn-success"
+        >Cambiar</a>
       </div>
 
     </div>
+  </div>
+{{else}}
+  <div class="col-md-4 mx-auto contenedor-sin-domicilio">
+    <div class="card card-body text-center" style="border: none;">
+      <p>Aun no tienes direccion de entrega.</p>
+      <a href="/domicilio/add" class="btn btn-primary">Crear Una.</a>
     </div>
-  {{else}}
-    <div class="col-md-4 mx-auto contenedor-sin-domicilio">
-      <div class="card card-body text-center" style="border: none;">
-        <p>Aun no tienes direccion de entrega.</p>
-        <a href="/domicilio/add" class="btn btn-primary">Crear Una.</a>
-      </div>
-    </div>
+  </div>
 
-  {{/each}}
+{{/each}}
 
 <div class="container contenedor-lista-de-productos">
 
@@ -88,7 +92,7 @@
     <!-- Aqui va contenida la lista de los productos de manera dinamica-->
     {{#each productoAComprar}}
       <div class="col-md-12">
-        <div class="card mb-3" >
+        <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4">
               <img
@@ -101,14 +105,116 @@
               <div class="card-body">
                 <h3 class="card-title">{{ProductName}}</h3>
                 <h5 class="prueba"> {{ProductPrice}}USD</h5>
-                <div style="color: #Ffff;" class="idproducto">{{ProductID}}</div>
-               
-                
+                <div
+                  style="color: #Ffff;"
+                  class="idproducto"
+                >{{ProductID}}</div>
+
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h4 class="text-center">Metodo de pago.</h4>
+        <div class="row">
+          <div class="col-md-6 text-center">
+            <h5>Paga por Inox Bank</h5>
+          
+          </div>
+
+          <div class="col-md-6 text-center">
+            <h5>Paga por Efecty</h5>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xl-6 lado-formulario">
+
+        <form action="/pagar/inox/{{ProductID}}" method="POST" class="formulario-login">
+          <!-- cabeza del formulario-->
+          <div class="head-form">
+            
+
+            <h3>Inicia sesión en INOX</h3>
+
+          </div>
+          <!-- area del correo electronico -->
+          <div class="correo-form">
+            <p>Direccion de correo electrónico</p>
+            <input
+              type="email"
+              name="Correo"
+              placeholder="Username01@inox.com"
+              id="email"
+            />
+          </div>
+          <!-- area de la contraseña-->
+          <div class="contrasena-form">
+            <p>Contraseña</p>
+            <input
+              type="password"
+              name="Contraseña"
+              placeholder="··········"
+              id="pass"
+            />
+          </div>
+
+          <!-- area del boton de ingresar -->
+          <div class="boton-login">
+            <button class="btn-register" value="ingresar" >
+              Pagar
+            </button>
+
+          </div>
+          <div class="alert-sesionFalse" id="alertSesionFalse">
+            <!-- aquí va un mensaje de error por que el usuario no existe-->
+          </div>
+        </form>
+      </div>
+
+      <div class="col-md-6 lado-formulario">
+          <form action="/pagar/efecty/{{ProductID}}" method="POST" class="formulario-login">
+          <!-- cabeza del formulario-->
+          <div class="head-form">
+            
+
+            <h3>Paga con Efecty</h3>
+
+          </div>
+          <!-- area del correo electronico -->
+          <div class="correo-form">
+            <p>Direccion de correo electrónico</p>
+            <input
+              type="email"
+              name="Correo"
+              placeholder="Username01@inox.com"
+              id="email"
+            />
+          </div>
+
+          <!-- area del boton de ingresar -->
+          <div class="boton-login">
+            <button class="btn-register" value="ingresar" >
+              Pagar
+            </button>
+
+          </div>
+          <div class="alert-sesionFalse" id="alertSesionFalse">
+            <!-- aquí va un mensaje de error por que el usuario no existe-->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
     {{/each}}
   </div>
   <div class="container container-mobible">
@@ -116,27 +222,12 @@
     <h6>total del pedido {{total}}USD</h6>
   </div>
 
+  
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h4 class="text-center">Metodo de pago.</h4>
-                <div class="row">
-                    <div class="col-md-6 text-center">
-                        <h5>Paga por Inox Bank</h5>
-                        <a href="" class="btn btn-primary">Ir a INOX BANK</a>
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <h5>Paga por Efecty</h5>
-                        <a href="" class="btn btn-warning">Ir a pago Efecty</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
   <!--row-->
 
 </div>
 <!-- contenedor -->
 
 <script type="text/script" src="utils/operaciones.js"></script>
+     <script type="text/script" src="utils/main.js"></script>

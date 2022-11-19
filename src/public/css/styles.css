@@ -133,8 +133,15 @@ justify-content: space-evenly;
     margin-bottom: 0;
 }
 
+
+
 .user-icon {
     margin: 10px 20px;
+    color: #000;
+}
+.user-icon:hover {
+    
+    color: #888;
 }
 .button-cart {
     min-width: 130px !important;
@@ -562,3 +569,48 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
     text-decoration: none;
     color: #000;
 }
+
+
+/* estylos de el perfil de usuario */
+
+.contenedor-lista-ordenes {
+    margin-top: 50px;
+}
+.navbar-movil {
+        display: none;
+}
+
+@media (max-width: 760px) {
+    .navbar-pc {
+        display: none;
+    }
+    
+    .navbar-movil {
+        display: block;
+        background-color: #000;   
+    }
+    .iconHamb {
+        color: #fff;
+    }
+    .contact-menu {
+        display: none;
+    }
+    .principal-menu {
+        display: none;
+    }
+    .right-menu {
+        display: none;
+    }
+    .user-cart-container {
+        display: none;
+    }
+    .none-display {
+        display: none;
+    }
+    .flex-container {
+        display: none !important;
+    }
+    .contenedor-titulo-sesion {
+        margin-top: 170px;
+    }
+  }
