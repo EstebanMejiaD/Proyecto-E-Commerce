@@ -15,9 +15,7 @@
     --lg: 18px;
   }
   
-.inactive {
-    display: none !important;
-}
+
 
 
 /* eltilos para el aletra de arriba */
@@ -584,6 +582,14 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
     .navbar-pc {
         display: none;
     }
+    .user-icon {
+        color: #0d6efd;
+        margin: 0;
+    }
+    .user-icon:hover {
+        color: #0e60db;
+        margin: 0;
+    }
     
     .navbar-movil {
         display: block;
@@ -614,3 +620,7 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
         margin-top: 170px;
     }
   }
+
+  .inactive {
+    display: none !important;
+}
