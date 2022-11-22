@@ -11,4 +11,9 @@ router.get('/', (req, res)=> {
     res.render('principalPage/index.hbs')
 })
 
+router.get('/nosotros', async(req, res)=> {
+    
+    res.render('principalPage/nosotros.hbs')
+})
+
 module.exports = router;

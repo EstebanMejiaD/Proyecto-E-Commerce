@@ -1,7 +1,7 @@
 /*  Estilos generales*/
 *{
     box-sizing: border-box;
-  
+
     font-family: 'Inconsolata', monospace;
 }
 :root {
@@ -14,7 +14,7 @@
     --md: 16px;
     --lg: 18px;
   }
-  
+
 
 
 
@@ -100,19 +100,37 @@ justify-content: space-evenly;
     position: relative;
     padding: 20px;
 }
-.navbar-li:hover  {
+.navbar-li:hover {
     background: #454546;
     color: #fff;
+    display: block;
 }
 .navbar-li:hover a {
     background: #454546;
     color: #fff;
 }
+.liabout{
+    list-style: none;
+    margin-top: 1em;
+    display: none;
+    margin-right: 2em;
+}
 
+
+.navbar-li .liabout a{
+    background-color: none;
+}
+.navbar-li:hover .liabout{
+    display: block;
+}
+
+.liabout:hover a{
+    color: #08c6ab;
+
+}
 .principal-menu a {
     text-decoration: none;
     color: #333;
-    
 }
 
 
@@ -138,7 +156,7 @@ justify-content: space-evenly;
     color: #000;
 }
 .user-icon:hover {
-    
+
     color: #888;
 }
 .contador-cart {
@@ -154,7 +172,7 @@ justify-content: space-evenly;
     border: 1px solid #454546;
     text-decoration: none;
     resize: both;
-    
+
 }
 .button-cart:hover {
     color: #fff;
@@ -172,7 +190,7 @@ justify-content: space-evenly;
 
 #form-search {
 margin-top: 0;
-    
+
 }
 
 #form-search input{
@@ -240,7 +258,7 @@ margin-top: 0;
     background: #343a43;
     padding: 40px;
     width: 90%;
-    
+
 }
 .input-container {
     display: flex;
@@ -278,7 +296,7 @@ margin-top: 0;
 }
 .button-group a:hover {
     color: #08c6ab;
-    
+
 }
 
 .btn-login {
@@ -299,7 +317,7 @@ margin-top: 0;
     padding: 7px;
     width: 160px;
     transition: background-color .3s;
-    
+
 
 }
 .btn-transparent:hover {
@@ -399,7 +417,7 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
     height: 225px;
     object-fit: cover ;
 
-    
+
   }
   .product-info {
     display: flex;
@@ -528,7 +546,7 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
     flex-wrap: wrap;
 }
 
-  
+
 
 
   @media (max-width: 640px) {
@@ -547,7 +565,7 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
 
 
   /* estilos para mensaje de bienvenida*/
-  
+
   .TituloH1 {
     font-weight: 700;
     font-size: 2.5rem;
@@ -602,10 +620,10 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
         color: #0e60db;
         margin: 0;
     }
-    
+
     .navbar-movil {
         display: block;
-        background-color: #000;   
+        background-color: #000;
     }
     .iconHamb {
         color: #fff;
@@ -630,6 +648,14 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
     }
     .contenedor-titulo-sesion {
         margin-top: 170px;
+    }
+    .liabout a{
+
+        text-decoration: none;
+    }
+   
+    .navbar-li {
+        padding:3px;
     }
   }
 

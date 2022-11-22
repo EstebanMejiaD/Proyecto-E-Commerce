@@ -189,7 +189,7 @@ router.post("/pagar/inox/:id",isLoggedIn, async (req, res) => {
     user_idOrden: req.user.id
   };
   await pool.query("INSERT INTO orden set ?", [newOrden]);
-
+  // await pool.query('DELETE FROM cartshop WHERE ProductID = ? user_id = ?', [id, req.user.id])
   // res.render('profile/ordenLista')
   res.redirect("/pagar/inox");
 });

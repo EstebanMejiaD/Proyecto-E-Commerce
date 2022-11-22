@@ -82,13 +82,33 @@ justify-content: space-evenly;
     position: relative;
     padding: 20px;
 }
-.navbar-li:hover  {
+.navbar-li:hover {
     background: #454546;
     color: #fff;
+    display: block;
 }
 .navbar-li:hover a {
     background: #454546;
     color: #fff;
+}
+.liabout{
+    list-style: none;
+    margin-top: 1em;
+    display: none;
+    margin-right: 2em;
+}
+
+
+.navbar-li .liabout a{
+    background-color: none;
+}
+.navbar-li:hover .liabout{
+    display: block;
+}
+
+.liabout:hover a{
+    color: #08c6ab;
+
 }
 
 .principal-menu a {
@@ -667,4 +687,17 @@ Styles for the cart shop
 .contenedor-factura {
     justify-content: center;
     width: 90%;
+}
+
+
+
+@media (max-width: 760px) {
+    .liabout a{
+
+        text-decoration: none;
+    }
+   
+    .navbar-li {
+        padding:3px;
+    }
 }
