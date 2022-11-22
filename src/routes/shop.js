@@ -5,23 +5,22 @@ const { render } = require("timeago.js");
 const router = express.Router();
 
 const pool = require("../database");
+const {isLoggedIn, isNotLoggedIn} = require('../lib/auth')
 
-router.get("/shop", async (req, res) => {
+router.get("/shop", isLoggedIn, async (req, res) => {
   const products = await pool.query("SELECT * FROM products;");
-
-  res.render("profile/shop.hbs", { products });
-  console.log(products);
+  const caritoActual = await pool.query("SELECT * FROM cartshop WHERE user_id = ?", [req.user.id]);
+  const contadorCarrito = caritoActual.length;
+  res.render("profile/shop.hbs", { products, contadorCarrito });
 });
 
-router.get("/addcart/:id", async (req, res) => {
+router.get("/addcart/:id", isLoggedIn, async (req, res) => {
   try {
     const { id } = req.params;
-    console.log("respuesta body: ", id);
     const product = await pool.query(
       "SELECT * FROM products WHERE ProductID = ?;",
       [id]
     );
-    console.log("producto: ", { product: product[0] });
 
     const {
       ProductName,
@@ -42,26 +41,31 @@ router.get("/addcart/:id", async (req, res) => {
       ManufactureYear,
       imagen,
       ProductSlug,
+      user_id: req.user.id
     };
-    console.log("nombre del producto:", newProduct);
     const shopProduct = await pool.query("INSERT INTO cartshop SET ?", [
       newProduct,
     ]);
-    console.log("producto en carrito: ", shopProduct);
+
+    const caritoActual = await pool.query("SELECT * FROM cartshop WHERE user_id = ?", [req.user.id]);
+    const contadorCarrito = caritoActual.length;
+
     const products = await pool.query("SELECT * FROM products;");
-    res.render("profile/shop.hbs", { products });
+    res.redirect("/shop");
+
   } catch (error) {
     console.log(error);
   }
 });
 
-router.get("/cart", async (req, res) => {
-  const cartProduct = await pool.query("SELECT * FROM cartshop;");
-  console.log(cartProduct);
-  res.render("profile/cart", { cartProduct });
+router.get("/cart", isLoggedIn, async (req, res) => {
+  const cartProduct = await pool.query("SELECT * FROM cartshop WHERE user_id = ?", [req.user.id]);
+  const caritoActual = await pool.query("SELECT * FROM cartshop WHERE user_id = ?", [req.user.id]);
+  const contadorCarrito = caritoActual.length;
+  res.render("profile/cart", { cartProduct,contadorCarrito });
 });
 
-router.get("/cart/delete/:id", async (req, res) => {
+router.get("/cart/delete/:id",isLoggedIn,  async (req, res) => {
   const { id } = req.params;
 
   await pool.query("DELETE FROM cartshop WHERE ProductID = ?", [id]);
@@ -70,7 +74,7 @@ router.get("/cart/delete/:id", async (req, res) => {
 });
 
 //filtro por busqueda de nombre
-router.post("/filter/name/", async (req, res) => {
+router.post("/filter/name/",isLoggedIn,  async (req, res) => {
   const { ProductName } = req.body;
 
   const products = await pool.query(
@@ -83,7 +87,7 @@ router.post("/filter/name/", async (req, res) => {
 
 //rutas para el domicilio o direccion
 
-router.post("/domicilio/add", async (req, res) => {
+router.post("/domicilio/add",isLoggedIn,  async (req, res) => {
   const { nombreCompleto, telefono, ciudad, municipio, direccion, detalle } =
     req.body;
   const newDomicilio = {
@@ -93,17 +97,18 @@ router.post("/domicilio/add", async (req, res) => {
     municipio,
     direccion,
     detalle,
+    user_idDomicilio: req.user.id
   };
   await pool.query("INSERT INTO domicilios set ?", [newDomicilio]);
   res.redirect("/cart");
 });
 
-router.get("/domicilio/add", (req, res) => {
+router.get("/domicilio/add",isLoggedIn,  (req, res) => {
   res.render("profile/formDomicilio");
 });
 
 //editar domicilio
-router.get("/domicilio/cambiar/:id", async (req, res) => {
+router.get("/domicilio/cambiar/:id",isLoggedIn, async (req, res) => {
   const { id } = req.params;
   const domicilio = await pool.query(
     "SELECT * FROM domicilios WHERE domicilioID = ?",
@@ -112,7 +117,7 @@ router.get("/domicilio/cambiar/:id", async (req, res) => {
   res.render("profile/cambiar", { domicilio: domicilio[0] });
 });
 
-router.post("/domicilio/cambiar/:id", async (req, res) => {
+router.post("/domicilio/cambiar/:id",isLoggedIn, async (req, res) => {
   const { id } = req.params;
   const { nombreCompleto, telefono, ciudad, municipio, direccion, detalle } =
     req.body;
@@ -134,7 +139,7 @@ router.post("/domicilio/cambiar/:id", async (req, res) => {
 
 //Ruta para comprar un producto
 
-router.get("/cart/comprar/:id", async (req, res) => {
+router.get("/cart/comprar/:id",isLoggedIn, async (req, res) => {
   const { id } = req.params;
   let productoAComprar = await pool.query(
     "SELECT * FROM cartshop WHERE ProductID = ?",
@@ -145,26 +150,29 @@ router.get("/cart/comprar/:id", async (req, res) => {
   const envio = 10;
   const total = envio + precioproducto;
 
-  const domicilio = await pool.query("SELECT * FROM domicilios;");
+  const domicilio = await pool.query("SELECT * FROM domicilios WHERE user_idDomicilio = ?", [req.user.id]);
 
+  const caritoActual = await pool.query("SELECT * FROM cartshop WHERE user_id = ?", [req.user.id]);
+  const contadorCarrito = caritoActual.length;
   res.render("profile/compra", {
     productoAComprar,
     domicilio,
     envio,
     total,
+    contadorCarrito,
   });
 });
 
 // pagos en inox
 
-router.post("/pagar/inox/:id", async (req, res) => {
+router.post("/pagar/inox/:id",isLoggedIn, async (req, res) => {
   const { Correo, Contraseña } = req.body;
   const { id } = req.params;
   const productoAComprar = await pool.query(
     "SELECT * FROM cartshop WHERE ProductID = ?",
     [id]
   );
-  const domicilio = await pool.query("SELECT * FROM domicilios;");
+  const domicilio = await pool.query("SELECT * FROM domicilios WHERE user_idDomicilio = ?", [req.user.id]);
 
   newOrden = {
     correo: Correo,
@@ -178,6 +186,7 @@ router.post("/pagar/inox/:id", async (req, res) => {
     ProductName: productoAComprar[0].ProductName,
     ProductPrice: productoAComprar[0].ProductPrice,
     imagen: productoAComprar[0].imagen,
+    user_idOrden: req.user.id
   };
   await pool.query("INSERT INTO orden set ?", [newOrden]);
 
@@ -185,9 +194,9 @@ router.post("/pagar/inox/:id", async (req, res) => {
   res.redirect("/pagar/inox");
 });
 
-router.get("/pagar/inox", async (req, res) => {
+router.get("/pagar/inox",isLoggedIn, async (req, res) => {
   const { id } = req.params;
-  const orden = await pool.query("SELECT * FROM orden ORDER BY ordenID DESC");
+  const orden = await pool.query("SELECT * FROM orden WHERE user_idOrden = ? ORDER BY ordenID DESC", [req.user.id]);
   ordenUnica = orden[0];
   newOrden = {
     correo: ordenUnica.correo,
@@ -207,14 +216,14 @@ router.get("/pagar/inox", async (req, res) => {
 
 
 //pagos en efecty
-router.post("/pagar/efecty/:id", async (req, res) => {
+router.post("/pagar/efecty/:id",isLoggedIn, async (req, res) => {
   const { Correo} = req.body;
   const { id } = req.params;
   const productoAComprar = await pool.query(
     "SELECT * FROM cartshop WHERE ProductID = ?",
     [id]
   );
-  const domicilio = await pool.query("SELECT * FROM domicilios;");
+  const domicilio = await pool.query("SELECT * FROM domicilios WHERE user_idDomicilio = ?", [req.user.id]);
 
   newOrden = {
     correo: Correo,
@@ -227,6 +236,7 @@ router.post("/pagar/efecty/:id", async (req, res) => {
     ProductName: productoAComprar[0].ProductName,
     ProductPrice: productoAComprar[0].ProductPrice,
     imagen: productoAComprar[0].imagen,
+    user_idOrden: req.user.id
   };
   await pool.query("INSERT INTO orden set ?", [newOrden]);
 
@@ -234,8 +244,8 @@ router.post("/pagar/efecty/:id", async (req, res) => {
   res.redirect("/pagar/efecty");
 });
 
-router.get("/pagar/efecty", async (req, res) => {
-  const orden = await pool.query("SELECT * FROM orden ORDER BY ordenID DESC");
+router.get("/pagar/efecty",isLoggedIn, async (req, res) => {
+  const orden = await pool.query("SELECT * FROM orden WHERE user_idOrden = ? ORDER BY ordenID DESC", [req.user.id]);
   ordenUnica = orden[0];
   newOrden = {
     correo: ordenUnica.correo,
@@ -252,12 +262,14 @@ router.get("/pagar/efecty", async (req, res) => {
   res.render("profile/facturaEfecty", {newOrden});
 });
 
-router.get('/profile/ordenes', async(req, res)=> {
+router.get('/profile/ordenes',isLoggedIn, async(req, res)=> {
 
-  const user = await pool.query('SELECT * FROM users')
-  const ordenes = await pool.query('SELECT * FROM orden')
+  const user = await pool.query('SELECT * FROM users WHERE id = ?', [req.user.id])
+  const ordenes = await pool.query('SELECT * FROM orden WHERE user_idOrden = ?', [req.user.id])
 
-  res.render('profile/profileUser', {user, ordenes})
+  const caritoActual = await pool.query("SELECT * FROM cartshop WHERE user_id = ?", [req.user.id]);
+  const contadorCarrito = caritoActual.length;
+  res.render('profile/profileUser', {user, ordenes, contadorCarrito})
 })
 
 module.exports = router;

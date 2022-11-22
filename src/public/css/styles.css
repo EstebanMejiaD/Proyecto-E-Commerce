@@ -141,9 +141,14 @@ justify-content: space-evenly;
     
     color: #888;
 }
+.contador-cart {
+    position: relative;
+    bottom: 12px;
+    left: 3px;
+}
 .button-cart {
     min-width: 130px !important;
-    height: 37px !important;
+    height: 45px !important;
     display: block;
     color: #454546;
     border: 1px solid #454546;
@@ -184,7 +189,9 @@ margin-top: 0;
     border-bottom: 3px solid #333;
 }
 
-
+.contenedor-invicible {
+    display: none;
+}
 /* aside login styles */
 
 .aside-login-e {
@@ -579,6 +586,11 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
 }
 
 @media (max-width: 760px) {
+    .contenedor-invicible {
+        height: 80px;
+        background: transparent;
+        display: block;
+    }
     .navbar-pc {
         display: none;
     }

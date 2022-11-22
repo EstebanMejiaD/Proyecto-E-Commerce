@@ -6,26 +6,29 @@ const express = require("express");
 const router = express.Router();
 
 const passport = require("passport");
-const {isLoggedIn} =  require('../lib/auth')
+const {isLoggedIn, isNotLoggedIn} =  require('../lib/auth')
+const pool = require("../database");
+
+
 // ruta al formulario del registro
-router.get("/singup", (req, res) => {
+router.get("/singup",isNotLoggedIn,  (req, res) => {
   res.render("auth/singup.hbs");
 });
 
 
 // rupa para autenticar y registrar un usuario
-router.post("/singup", passport.authenticate("local.singup", {
+router.post("/singup",isNotLoggedIn, passport.authenticate("local.singup", {
     successRedirect: "/profile",
     failureRedirect: "/singup",
     failureFlash: true
   }));
 
 // ruta al formulario del login
-router.get("/login", (req, res) => {
+router.get("/login", isNotLoggedIn, (req, res) => {
   res.render("auth/login.hbs");
 });
 
-router.post('/login', (req, res, next)=> {
+router.post('/login', isNotLoggedIn, (req, res, next)=> {
 
     passport.authenticate('local.login', {
         successRedirect: '/profile',
@@ -36,13 +39,17 @@ router.post('/login', (req, res, next)=> {
 
 
 //
-router.get("/profile", isLoggedIn, (req, res) => {
-  res.render("profile/profile.hbs");
+router.get("/profile", isLoggedIn, async (req, res) => {
+  const caritoActual = await pool.query("SELECT * FROM cartshop WHERE user_id = ?", [req.user.id]);
+  const contadorCarrito = caritoActual.length;
+  res.render("profile/profile.hbs", {contadorCarrito});
 });
 
-router.get('/logout', (req, res)=> {
-    req.logOut();
-    res.render('/login')
-})
+router.get('/logout', isLoggedIn, function(req, res, next){
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect('/');
+  });
+});
 
 module.exports = router;

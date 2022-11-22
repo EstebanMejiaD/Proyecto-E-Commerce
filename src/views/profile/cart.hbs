@@ -47,7 +47,7 @@
 
         <li class="nav-item">
          
-            <a href="/" class="nav-link"><i class="bi bi-box-arrow-right"></i></a>
+            <a href="/logout" class="nav-link"><i class="bi bi-box-arrow-right"></i></a>
           
         </li>
       </ul>
@@ -80,16 +80,16 @@
         <a href="/profile/ordenes"><i class="none-display user-icon fas fa-user"></i></a>
       </span>
       <a class="link__button-cart none-display" href="/cart"><button
-          class="button-cart none-display"
+          class="button-cart"
         >Carrito
-          <i class="fas fa-shopping-cart none-display"></i></button></a>
+          <i class="fas fa-shopping-cart "><span class="contador-cart">{{contadorCarrito}}</span></i></button></a>
       <span class="logout-container none-display">
-        <a href="/"><i class="bi bi-box-arrow-right none-display"></i></a>
+        <a href="/logout"><i class="bi bi-box-arrow-right none-display"></i></a>
       </span>
     </div>
-    <form id="form-search none-display">
+    <form id="form-search">
       <input class="none-display" type="search" placeholder="Buscar producto" />
-      <i class="fas fa-search none-display" ></i>
+      <i class="fas fa-search " ></i>
     </form>
   </div>
 </header>

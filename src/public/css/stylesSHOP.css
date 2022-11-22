@@ -116,9 +116,11 @@ justify-content: space-evenly;
 .user-icon {
     margin: 10px 20px;
 }
+
+
 .button-cart {
     min-width: 130px !important;
-    height: 37px !important;
+    height: 45px !important;
     display: block;
     color: #454546;
     border: 1px solid #454546;
@@ -290,6 +292,11 @@ background: radial-gradient(circle at center, rgb(83, 240, 219) 99%, #08c6ab 100
 
 /* Estilos para el titulo del apartado de SHOP  O STORE */  
 
+
+
+.contenedor-titulo {
+    margin-top: 30px;
+}
 
 .TituloH1 {
     font-weight: 700;
